@@ -9,7 +9,6 @@ RUN apk update && apk --no-cache add py-pip coreutils bash supervisor nginx curl
   freetype libpng libwebp-dev libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev libzip-dev zlib-dev && \
   cp /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && echo "Asia/Jakarta" > /etc/timezone && apk del tzdata && \
   curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer && \
-  docker-php-ext-configure zip --with-libzip && \
   docker-php-ext-configure gd \
     --with-gd \
     --with-webp-dir \
