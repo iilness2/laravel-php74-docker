@@ -6,7 +6,7 @@ COPY . /var/www/html/
 
 # Install packages
 RUN apk update && apk --no-cache add py-pip coreutils bash supervisor nginx curl unzip git ffmpeg tzdata \
-  freetype libpng libwebp-dev libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev libonig-dev libzip-dev zlib-dev && \
+  freetype libpng libwebp-dev libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev oniguruma-dev libzip-dev zlib-dev && \
   cp /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && echo "Asia/Jakarta" > /etc/timezone && apk del tzdata && \
   curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer && \
   docker-php-ext-configure gd \
